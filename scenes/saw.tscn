@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cvxpuso7gtxka"]
+
+[ext_resource type="Texture2D" uid="uid://dvv3mspleuvvy" path="res://assets/kenney_platformerpack/PNG/Enemies/saw.png" id="1_k45r4"]
+[ext_resource type="Script" uid="uid://f77w6douy8gs" path="res://scenes/obstacle_spawner.gd" id="1_kprxg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kprxg"]
+radius = 23.021729
+
+[node name="Node2D" type="RigidBody2D" unique_id=142954845]
+gravity_scale = 0.0
+contact_monitor = true
+script = ExtResource("1_kprxg")
+yDir = 5
+xDir = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1608264247]
+shape = SubResource("CircleShape2D_kprxg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1593484001]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_k45r4")
+
+[connection signal="body_entered" from="." to="." method="_on_FallArea_body_entered"]

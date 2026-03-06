@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b40dnkalwneot"]
+
+[ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="1_3mwvr"]
+[ext_resource type="Script" uid="uid://f77w6douy8gs" path="res://scenes/obstacle_spawner.gd" id="1_ij6dc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij6dc"]
+radius = 34.0
+height = 102.0
+
+[node name="ObstacleSpawner" type="RigidBody2D" unique_id=1750737935]
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_ij6dc")
+yDir = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=354285835]
+rotation = 3.1415927
+texture = ExtResource("1_3mwvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=764949610]
+position = Vector2(1, 4)
+shape = SubResource("CapsuleShape2D_ij6dc")
+
+[connection signal="body_entered" from="." to="." method="_on_FallArea_body_entered"]
