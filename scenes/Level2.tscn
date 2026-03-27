@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cvxpuso7gtxka" path="res://scenes/saw.tscn" id="6_4p0dt"]
 [ext_resource type="PackedScene" uid="uid://da0j153wss24v" path="res://scenes/Zone.tscn" id="7_qwp14"]
 [ext_resource type="Texture2D" uid="uid://bbale34yqctf4" path="res://assets/kenney_platformerpack/PNG/Backgrounds/blue_land.png" id="7_xpq2v"]
+[ext_resource type="PackedScene" uid="uid://751ou282p0pr" path="res://scenes/LifeCounter.tscn" id="9_0jmjk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sp0w3"]
 texture = ExtResource("1_kkoku")
@@ -101,3 +102,7 @@ z_index = -2
 position = Vector2(2769.25, 70.00001)
 scale = Vector2(1.3237305, 1.0087891)
 texture = ExtResource("7_xpq2v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1326555681]
+
+[node name="LifeCounter" parent="CanvasLayer" unique_id=1453780847 instance=ExtResource("9_0jmjk")]

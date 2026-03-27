@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b4n0an5ukj3aj" path="res://assets/kenney_platformerpack/PNG/Backgrounds/colored_desert.png" id="5_lrl65"]
 [ext_resource type="PackedScene" uid="uid://cwusc4sygc04t" path="res://scenes/Spawner.tscn" id="6_76388"]
 [ext_resource type="PackedScene" uid="uid://b40dnkalwneot" path="res://scenes/ObstacleSpawner.tscn" id="7_svatc"]
+[ext_resource type="PackedScene" uid="uid://751ou282p0pr" path="res://scenes/LifeCounter.tscn" id="8_ecr63"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
 texture = ExtResource("2_bwv4p")
@@ -100,3 +101,7 @@ timeDelay = 3
 position = Vector2(525, 10)
 obstacle = ExtResource("7_svatc")
 timeDelay = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1338274825]
+
+[node name="LifeCounter" parent="CanvasLayer" unique_id=1453780847 instance=ExtResource("8_ecr63")]

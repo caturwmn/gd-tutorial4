@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://7qn8xcll1rxf"]
+
+[ext_resource type="Script" uid="uid://dq8ulku5c0xj2" path="res://scenes/StartGame.gd" id="1_eeirb"]
+[ext_resource type="Texture2D" uid="uid://ch5ret1dd7qk3" path="res://assets/kenney_platformerpack/PNG/Backgrounds/blue_grass.png" id="3_svcss"]
+
+[node name="StageSelect" type="MarginContainer" unique_id=637233007]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=688097988]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=2132136496]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1706659348]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7471548, 0.8417332, 0.38433683, 1)
+theme_override_font_sizes/font_size = 50
+text = "Select Stage"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=415688780]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 20
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=146013326]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.16924527, 0.1692453, 0.16924527, 1)
+theme_override_colors/font_hover_color = Color(0.32618377, 0.326184, 0.32618472, 1)
+text = "Level 1"
+underline = 2
+script = ExtResource("1_eeirb")
+scene_to_load = "Level1"
+
+[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1091626116]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.16924527, 0.1692453, 0.16924527, 1)
+theme_override_colors/font_hover_color = Color(0.32618377, 0.326184, 0.32618472, 1)
+text = "Level 2"
+underline = 2
+script = ExtResource("1_eeirb")
+scene_to_load = "Level2"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1842921434]
+z_index = -4
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_svcss")
+expand_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" method="_on_pressed"]
